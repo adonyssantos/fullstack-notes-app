@@ -4,16 +4,20 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100%;
-
-  padding: 0.5rem;
+  /* height: 100%; */
   border-radius: 0.5rem;
   background-color: rgb(42, 42, 42);
   color: inherit;
   margin-bottom: 20px;
   padding: 20px;
-
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+  .note-item {
+    width: 45%;
+    margin: 0.5rem;
+  }
 }
 
 .note-item__title {
