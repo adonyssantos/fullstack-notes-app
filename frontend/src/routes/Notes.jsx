@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Menu from '../components/Menu';
 import NoteItem from '../components/NoteItem';
 import NotesGroup from '../components/NotesGroup';
+import { Link } from 'react-router-dom';
 
 function Notes() {
   const [notes, setNotes] = useState(false);
@@ -18,8 +19,10 @@ function Notes() {
     return (
       <div className='notes'>
         <Menu />
-        <p className='notes-subtitle'>No notes found.</p>
-        <p className='notes-subtitle'>Create your first note!</p>
+        <p className='notes-subtitle top-spacer'>No notes found.</p>
+        <p className='notes-subtitle'>
+          <Link to='create'>Create your first note!</Link>
+        </p>
       </div>
     );
   }
@@ -28,7 +31,7 @@ function Notes() {
     return (
       <div className='notes'>
         <Menu />
-        <p className='notes-subtitle'>Loading...</p>
+        <p className='notes-subtitle top-spacer'>Loading...</p>
         <p className='notes-subtitle'>Getting notes!</p>
       </div>
     );

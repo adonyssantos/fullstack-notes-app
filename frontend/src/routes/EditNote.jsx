@@ -39,7 +39,7 @@ function EditNote() {
   return (
     <div className='notes'>
       <Menu />
-      <div className='container'>
+      <div className='container top-spacer'>
         <h2>Edit Note</h2>
         <form onSubmit={handleEdit}>
           <label htmlFor='title'>Title</label>

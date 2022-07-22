@@ -19,7 +19,7 @@ function ViewNote() {
     return (
       <div className='notes'>
         <Menu />
-        <p className='notes-subtitle'>This note does not exist.</p>
+        <p className='notes-subtitle top-spacer'>This note does not exist.</p>
       </div>
     );
   }
@@ -28,7 +28,7 @@ function ViewNote() {
     return (
       <div className='notes'>
         <Menu />
-        <p className='notes-subtitle'>Loading...</p>
+        <p className='notes-subtitle top-spacer'>Loading...</p>
         <p className='notes-subtitle'>Getting notes!</p>
       </div>
     );

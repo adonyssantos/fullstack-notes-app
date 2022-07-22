@@ -28,7 +28,7 @@ function CreateNote() {
   return (
     <div className='notes'>
       <Menu />
-      <div className='container'>
+      <div className='container top-spacer'>
         <h2>Create Note</h2>
         <form onSubmit={handleCreate}>
           <label htmlFor='title'>Title</label>

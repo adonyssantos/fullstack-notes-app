@@ -16,7 +16,7 @@ function DeleteNote() {
   return (
     <div className='notes'>
       <Menu />
-      <p className='notes-subtitle'>{message}</p>
+      <p className='notes-subtitle top-spacer'>{message}</p>
     </div>
   );
 }
