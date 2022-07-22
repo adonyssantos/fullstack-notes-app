@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/Menu.css';
 
 export default function Menu() {
@@ -8,14 +9,14 @@ export default function Menu() {
       <nav className='menu-nav'>
         <ul className='menu-nav__list'>
           <li className='menu-nav__item'>
-            <a className='menu-nav__link' href='#'>
+            <Link className='menu-nav__link' to='/'>
               Notes
-            </a>
+            </Link>
           </li>
           <li className='menu-nav__item'>
-            <a className='menu-nav__link' href='#'>
+            <Link className='menu-nav__link' to='create'>
               Create
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>

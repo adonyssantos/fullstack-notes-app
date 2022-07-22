@@ -65,6 +65,21 @@ app.post('/notes', (request, response) => {
   let sql = 'insert into notes (title, content) values (?, ?);';
   let values = [request.body.title, request.body.content];
 
+  const validation =
+    request.body.content.trim() === '' ||
+    request.body.title.trim() === '' ||
+    !request.body.title ||
+    !request.body.content;
+
+  if (validation) {
+    response.status(400).json({
+      error: '400 Bad Request',
+      message: 'Content cannot be empty!',
+      data: null,
+    });
+    return;
+  }
+
   database.query(sql, values, (error, results) => {
     if (error) {
       response.status(500).json({
@@ -100,7 +115,7 @@ app.post('/notes', (request, response) => {
       response.json({
         error: null,
         message: 'Note created successfully!',
-        data: results,
+        data: results[0],
       });
     });
   });
@@ -109,6 +124,21 @@ app.post('/notes', (request, response) => {
 app.put('/notes/:id', (request, response) => {
   let sql = 'update notes set title = ?, content = ? where id = ?;';
   let values = [request.body.title, request.body.content, request.params.id];
+
+  const validation =
+    request.body.content.trim() === '' ||
+    request.body.title.trim() === '' ||
+    !request.body.title ||
+    !request.body.content;
+
+  if (validation) {
+    response.status(400).json({
+      error: '400 Bad Request',
+      message: 'Content cannot be empty!',
+      data: null,
+    });
+    return;
+  }
 
   database.query(sql, values, (error, results) => {
     if (error) {
@@ -145,7 +175,7 @@ app.put('/notes/:id', (request, response) => {
       response.json({
         error: null,
         message: 'Note updated successfully!',
-        data: results,
+        data: results[0],
       });
     });
   });
